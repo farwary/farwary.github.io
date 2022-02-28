@@ -50,9 +50,9 @@ const ContributorsJS = {
       var cellALL = "";
       (data || []).forEach((item, i) => {
         var user = '<div class="user-card">';
-        user += '<a class="card-link" target="_blank" rel="external nofollow noopener noreferrer"';
+        user += '<a class="card-link" target="_blank" rel="external noopener noreferrer"';
         user += ' href="' + item.html_url + '">';
-        user += '<img alt="' + item.login + '" src="' + (item.avatar_url || cfg.avatar) + '" onerror="javascript:this.src=\'' + cfg.avatar + '\';">';
+        user += '<img alt="' + item.login + '" src="' + (item.avatar_url || cfg.avatar) + '" onerror="javascript:this.onerror=null;this.src=\'' + cfg.avatar + '\';">';
         user += '<div class="name"><span>' + item.login + '</span></div>';
         user += '</a>';
         user += '</div>';
@@ -78,7 +78,7 @@ const ContributorsJS = {
       cfg.el = el;
       cfg.api = api;
       cfg.class = el.getAttribute('class');
-      cfg.avatar = 'https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/avatar/round/3442075.svg';
+      cfg.avatar = volantis.GLOBAL_CONFIG.default.avatar;
       ContributorsJS.layout(cfg);
     }
   }
