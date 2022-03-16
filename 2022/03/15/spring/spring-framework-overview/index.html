@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://farwary.github.io/archives/"/>
+  <link rel="canonical" href="https://farwary.github.io/2022/03/15/spring/spring-framework-overview/"/>
   <!-- 渲染优化 -->
   <!-- <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,25 @@
   <meta content="Farwary" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1647413375008" as="style">
+  <link rel="preload" href="/css/style.css?time=1647413374862" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>归档 - Farwary</title>
-  <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Farwary">
-<meta property="og:url" content="https://farwary.github.io/archives/index.html">
+  <meta name="keywords" content="Spring Framework,null">
+  <meta name="description" content="Spring Framework 源码解读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Framework 源码解读">
+<meta property="og:url" content="https://farwary.github.io/2022/03/15/spring/spring-framework-overview/index.html">
 <meta property="og:site_name" content="Farwary">
+<meta property="og:description" content="Spring Framework 源码解读">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://farwary.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-03-15T09:35:57.563Z">
+<meta property="article:modified_time" content="2022-03-15T09:40:41.719Z">
 <meta property="article:author" content="farwary">
+<meta property="article:tag" content="Spring Framework">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://farwary.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1806,8 +1811,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1647413375008" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1647413375008"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1647413374862" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1647413374862"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1884,9 +1889,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1647413375008","sites":"/js/plugins/sites.js?time=1647413375008","friends":"/js/plugins/friends.js?time=1647413375008","parallax":"/js/plugins/parallax.js?time=1647413375008","rightMenu":"/js/plugins/rightMenu.js?time=1647413375008","contributors":"/js/plugins/contributors.js?time=1647413375008","message":"/js/thirdparty/message.js?time=1647413375008","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1647413375008","search":"/js/search/hexo.js?time=1647413375008"},"css":{"style":"/css/style.css?time=1647413375008","message":"/css/message.css?time=1647413375008"}},
+    cdn: {"js":{"app":"/js/app.js?time=1647413374862","sites":"/js/plugins/sites.js?time=1647413374862","friends":"/js/plugins/friends.js?time=1647413374862","parallax":"/js/plugins/parallax.js?time=1647413374862","rightMenu":"/js/plugins/rightMenu.js?time=1647413374862","contributors":"/js/plugins/contributors.js?time=1647413374862","message":"/js/thirdparty/message.js?time=1647413374862","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1647413374862","search":"/js/search/hexo.js?time=1647413374862"},"css":{"style":"/css/style.css?time=1647413374862","message":"/css/message.css?time=1647413374862"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date('Wed Mar 16 2022 14:49:35 GMT+0800 (中国标准时间)'),
+    lastupdate: new Date('Wed Mar 16 2022 14:49:34 GMT+0800 (中国标准时间)'),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2533,7 +2538,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  dock' style="display: ;">
+      <div id="half" class='cover-wrapper post dock' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s2.loli.net/2022/02/27/5C9ZNBa1JgEtqMm.jpg"></div>
 
@@ -2605,97 +2610,152 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow">
-			
-			
-				
-				
-					
-						
-						<h2>2022</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/03/15/spring/classfile/">
-									<time>03-15</time>
-									
-										class类文件结构
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/03/15/spring/spring-framework-overview/">
-									<time>03-15</time>
-									
-										Spring Framework 源码解读
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/03/08/mq/rocketmq/">
-									<time>03-08</time>
-									
-										RocketMQ
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/02/27/springboot/springboot-source/springboot-source-overview/">
-									<time>02-27</time>
-									
-										Spring Boot 源码解读
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-			
-				
-				
-			
-				
-				
-			
-				
-				
-			
-	  </article>
-	
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/03/15/spring/spring-framework-overview/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Farwary">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Farwary">
+    <meta itemprop="description" content="">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        Spring Framework 源码解读
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="https://farwary.github.io/" rel="nofollow">
+    <img itemprop="image" src="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg" class="lazyload" data-srcset="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">farwary</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Spring-Framework/">Spring Framework</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Spring-Framework/" itemprop="url"><span itemprop="name">Spring Framework</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-03-15T17:35:57+08:00">
+  <a class='notlink'>
+    <i class="fa fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年3月15日</p>
+  </a>
+</div>
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <ol>
+<li><a href="/2022/03/15/spring/spring-framework-core/" title="spring-core">spring-core</a></li>
+</ol>
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Spring-Framework/" rel="nofollow"><i class="fa fa-hashtag fa-fw" aria-hidden="true"></i><p>Spring Framework</p></a></div>
+  <span hidden itemprop="keywords">Spring Framework</span>
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+    
+    <!--  -->
+  
+
+  <!-- 
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/03/15/spring/spring-framework-core/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>spring core</p>
+          <p class='content'>Core模块包含
+
+asm        ASM is an all purpose Java bytecode manipulation and analysis framework. 取自官...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/03/08/mq/rocketmq/'>
+          <p class='title'>RocketMQ<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>基本的网址  RocketMQ官网https://rocketmq.apache.org/
+  GitHub地址https://github.com/apache/rocketmq
+
+为什么使用...</p>
+        </a>
+      
+    </div>
+   -->
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2703,65 +2763,49 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
+
+  
+
+<section class="widget list group shadow desktop mobile pjax">
+  
+  <header>
+    
+      <i class="fa fa-book fa-fw" aria-hidden="true"></i><span class='name'>Spring Framework 源码</span>
+    
+  </header>
+
+
   <div class='content'>
-    
+    <ul class="list entry navigation">
       
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'/>
-        </a>
+        <li><a class="flat-box" title="/2022/03/15/spring/spring-framework-overview/" href="/2022/03/15/spring/spring-framework-overview/"
+          
+          
+          active-action="action-20220315springspring-framework-overview"
+          >
+          <div class='name'>
+            
+            1.Spring Framework 阅读前言
+          </div>
+          
+        </a></li>
       
-    
-    
-      <div class='text'>
-        
-          <h2>Farwary</h2>
-        
-        
-        
-      </div>
-    
-    
+        <li><a class="flat-box" title="/2022/03/15/spring/spring-framework-core/" href="/2022/03/15/spring/spring-framework-core/"
+          
+          
+          active-action="action-20220315springspring-framework-core"
+          >
+          <div class='name'>
+            
+            2.spring core
+          </div>
+          
+        </a></li>
+      
+    </ul>
   </div>
 </section>
 
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/MQ/" href="/categories/MQ/"
-            active-action="action-categoriesMQ"
-            ><div class='name'>MQ</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Spring-Boot/" href="/categories/Spring-Boot/"
-            active-action="action-categoriesSpring-Boot"
-            ><div class='name'>Spring Boot</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Spring-Framework/" href="/categories/Spring-Framework/"
-            active-action="action-categoriesSpring-Framework"
-            ><div class='name'>Spring Framework</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
 
 
   
@@ -2769,29 +2813,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <a href="/tags/MQ/" style="font-size: 14px; color: #999">MQ</a> <a href="/tags/Spring-Boot/" style="font-size: 24px; color: #555">Spring Boot</a> <a href="/tags/Spring-Framework/" style="font-size: 19px; color: #777">Spring Framework</a>
-    </div>
-  </section>
 
-
-  
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2828,14 +2864,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Spring Framework 源码解读";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2911,7 +2948,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1647413375008.js"></script>
+<script src="/js/app.js?time=1647413374862.js"></script>
 
 
 
@@ -3103,7 +3140,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1647413375008')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1647413374862')</script>
 
 
 
@@ -3232,19 +3269,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1647413375008")
+        volantis.js("/js/plugins/sites.js?time=1647413374862")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1647413375008")
+        volantis.js("/js/plugins/friends.js?time=1647413374862")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1647413375008")
+        volantis.js("/js/plugins/contributors.js?time=1647413374862")
       }
     
   };
@@ -3369,7 +3406,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1647413375008");
+    return volantis.js("/js/search/hexo.js?time=1647413374862");
   }
 
   function loadSearchService() {
@@ -3660,7 +3697,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://farwary.github.io/","name":"Farwary"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Farwary","url":"https://farwary.github.io/","keywords":null,"description":"","author":{"@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","description":""},"publisher":{"@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://farwary.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://farwary.github.io/","name":"Farwary"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/archives/","name":"Archive"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/categories/Spring-Framework/","name":"Spring Framework"}},{"@type":"ListItem","position":3,"item":{"@id":"https://farwary.github.io/2022/03/15/spring/spring-framework-overview/","name":"Spring Framework 源码解读"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Spring Framework 源码解读","description":"Spring Framework 源码解读","datePublished":"2022-03-15T09:35:57.563Z","dateModified":"2022-03-15T09:40:41.719Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://farwary.github.io/2022/03/15/spring/spring-framework-overview/"},"author":{"@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/"},"publisher":{"@type":"Organization","name":"Farwary","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://farwary.github.io/2022/03/15/spring/spring-framework-overview/","wordCount":21,"articleSection":"Spring Framework","keywords":"Spring Framework","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
