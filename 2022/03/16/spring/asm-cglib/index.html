@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://farwary.github.io/archives/2022/02/"/>
+  <link rel="canonical" href="https://farwary.github.io/2022/03/16/spring/asm-cglib/"/>
   <!-- 渲染优化 -->
   <!-- <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,25 @@
   <meta content="Farwary" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1647498830536" as="style">
+  <link rel="preload" href="/css/style.css?time=1647498830230" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>归档：2022/2 - Farwary</title>
-  <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Farwary">
-<meta property="og:url" content="https://farwary.github.io/archives/2022/02/index.html">
+  <title>归档 - Farwary</title>
+  <meta name="keywords" content="JVM,null">
+  <meta name="description" content="asm cglib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="asm cglib">
+<meta property="og:url" content="https://farwary.github.io/2022/03/16/spring/asm-cglib/index.html">
 <meta property="og:site_name" content="Farwary">
+<meta property="og:description" content="asm cglib">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://farwary.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-03-16T12:30:37.080Z">
+<meta property="article:modified_time" content="2022-03-17T03:34:39.201Z">
 <meta property="article:author" content="farwary">
+<meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://farwary.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1806,8 +1811,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1647498830536" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1647498830536"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1647498830230" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1647498830230"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1884,7 +1889,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1647498830536","sites":"/js/plugins/sites.js?time=1647498830536","friends":"/js/plugins/friends.js?time=1647498830536","parallax":"/js/plugins/parallax.js?time=1647498830536","rightMenu":"/js/plugins/rightMenu.js?time=1647498830536","contributors":"/js/plugins/contributors.js?time=1647498830536","message":"/js/thirdparty/message.js?time=1647498830536","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1647498830536","search":"/js/search/hexo.js?time=1647498830536"},"css":{"style":"/css/style.css?time=1647498830536","message":"/css/message.css?time=1647498830536"}},
+    cdn: {"js":{"app":"/js/app.js?time=1647498830230","sites":"/js/plugins/sites.js?time=1647498830230","friends":"/js/plugins/friends.js?time=1647498830230","parallax":"/js/plugins/parallax.js?time=1647498830230","rightMenu":"/js/plugins/rightMenu.js?time=1647498830230","contributors":"/js/plugins/contributors.js?time=1647498830230","message":"/js/thirdparty/message.js?time=1647498830230","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1647498830230","search":"/js/search/hexo.js?time=1647498830230"},"css":{"style":"/css/style.css?time=1647498830230","message":"/css/message.css?time=1647498830230"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
     lastupdate: new Date('Thu Mar 17 2022 14:33:50 GMT+0800 (中国标准时间)'),
     sidebar: {
@@ -2533,7 +2538,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  dock' style="display: ;">
+      <div id="half" class='cover-wrapper post dock' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s2.loli.net/2022/02/27/5C9ZNBa1JgEtqMm.jpg"></div>
 
@@ -2605,18 +2610,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/02/27/springboot/springboot-source/springboot-source-overview/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/03/16/spring/asm-cglib/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Farwary">
   </span>
@@ -2625,444 +2620,198 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/27/springboot/springboot-source/springboot-source-overview/"  itemprop="url">
-        Spring Boot 源码解读
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      Spring Boot 源码解读
+    
+      <h1 class="title" itemprop="name headline">
+        asm cglib
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="https://farwary.github.io/" rel="nofollow">
+    <img itemprop="image" src="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg" class="lazyload" data-srcset="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">farwary</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/JVM/">JVM</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/JVM/" itemprop="url"><span itemprop="name">JVM</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-27T15:47:38+08:00">2022-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Boot/">Spring Boot</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Boot/" itemprop="url"><span itemprop="name">Spring Boot</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-03-16T20:30:37+08:00">
+  <a class='notlink'>
+    <i class="fa fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年3月16日</p>
+  </a>
+</div>
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h3 id="ASM"><a href="#ASM" class="headerlink" title="ASM"></a>ASM</h3><p>ASM是一种通用Java字节码操作和分析框架。它可以用于修改现有的class文件或动态生成class文件。</p>
+<div class="tag link"><a class="link-card" title="官网" target="_blank" rel="noopener" href="https://asm.ow2.io/"><div class="left"><img src="/media/org.volantis/logo/256/safari.png" class="lazyload" data-srcset="/media/org.volantis/logo/256/safari.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div><div class="right"><p class="text">官网</p><p class="url">https://asm.ow2.io/</p></div></a></div>
+
+
+<h4 id="ASM-Demo1"><a href="#ASM-Demo1" class="headerlink" title="ASM Demo1"></a>ASM Demo1</h4><div class="tag link"><a class="link-card" title="Demo" target="_blank" rel="noopener" href="https://github.com/isJoker/ASM_Demo"><div class="left"><img src="/media/org.volantis/logo/256/safari.png" class="lazyload" data-srcset="/media/org.volantis/logo/256/safari.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div><div class="right"><p class="text">Demo</p><p class="url">https://github.com/isJoker/ASM_Demo</p></div></a></div>
+
+<h4 id="ASM-Demo2"><a href="#ASM-Demo2" class="headerlink" title="ASM Demo2"></a>ASM Demo2</h4><div class="note "><p>依赖都是SpringFramework6里的</p></div>
+
+<details green><summary> Main </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Asm</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">ClassReader</span> <span class="variable">classReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassReader</span>(<span class="string">&quot;com.wwj.asm.HelloWorld&quot;</span>);</span><br><span class="line">        <span class="type">ClassWriter</span> <span class="variable">classWriter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassWriter</span>(ClassWriter.COMPUTE_MAXS);</span><br><span class="line"></span><br><span class="line">        <span class="type">HelloClassVisitor</span> <span class="variable">helloClassVisitor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HelloClassVisitor</span>(Opcodes.ASM9, classWriter);</span><br><span class="line">        classReader.accept(helloClassVisitor,ClassReader.EXPAND_FRAMES);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> (<span class="type">FileOutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;./HelloWorld.class&quot;</span>))) &#123;</span><br><span class="line">            outputStream.write(classWriter.toByteArray());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> HelloWorld </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 在这里插入代码 System.out.println(&quot;asm insert before&quot;);</span></span><br><span class="line">        System.out.println(<span class="string">&quot;this is run&quot;</span>);</span><br><span class="line">        <span class="comment">// 在这里插入代码 System.out.println(&quot;asm insert after&quot;);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getValue</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;this is getValue&quot;</span>);</span><br><span class="line">        <span class="comment">// 在 return 语句之前插入 System.out.println(&quot;insert before return&quot;);</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> HelloClassVisitor </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloClassVisitor</span> <span class="keyword">extends</span> <span class="title class_">ClassVisitor</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HelloClassVisitor</span><span class="params">(<span class="type">int</span> api)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(api);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HelloClassVisitor</span><span class="params">(<span class="type">int</span> api, ClassVisitor classVisitor)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(api, classVisitor);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> MethodVisitor <span class="title function_">visitMethod</span><span class="params">(<span class="type">int</span> access, String name, String descriptor, String signature, String[] exceptions)</span> &#123;</span><br><span class="line">        <span class="type">MethodVisitor</span> <span class="variable">mv</span> <span class="operator">=</span> <span class="built_in">super</span>.visitMethod(access, name, descriptor, signature, exceptions);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (name.equals(<span class="string">&quot;run&quot;</span>)) &#123;</span><br><span class="line">            mv = <span class="keyword">new</span> <span class="title class_">HelloMethodVisitor</span>(Opcodes.ASM9, mv);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (name.equals(<span class="string">&quot;getValue&quot;</span>)) &#123;</span><br><span class="line">            mv = <span class="keyword">new</span> <span class="title class_">HelloWithReturnMethodVisitor</span>(Opcodes.ASM9, mv);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> HelloMethodVisitor </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloMethodVisitor</span> <span class="keyword">extends</span> <span class="title class_">MethodVisitor</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HelloMethodVisitor</span><span class="params">(<span class="type">int</span> api)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(api);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HelloMethodVisitor</span><span class="params">(<span class="type">int</span> api, MethodVisitor methodVisitor)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(api, methodVisitor);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">visitCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.visitCode();</span><br><span class="line">        hack(mv, <span class="string">&quot;asm insert before&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">visitInsn</span><span class="params">(<span class="type">int</span> opcode)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (opcode == Opcodes.RETURN) &#123;</span><br><span class="line">            hack(mv, <span class="string">&quot;asm insert after&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">super</span>.visitInsn(opcode);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">hack</span><span class="params">(MethodVisitor mv, String msg)</span> &#123;</span><br><span class="line">        mv.visitFieldInsn(</span><br><span class="line">                Opcodes.GETSTATIC,</span><br><span class="line">                Type.getInternalName(System.class),</span><br><span class="line">                <span class="string">&quot;out&quot;</span>,</span><br><span class="line">                Type.getDescriptor(PrintStream.class)</span><br><span class="line">        );</span><br><span class="line">        mv.visitLdcInsn(msg);</span><br><span class="line">        mv.visitMethodInsn(</span><br><span class="line">                Opcodes.INVOKEVIRTUAL,</span><br><span class="line">                Type.getInternalName(PrintStream.class),</span><br><span class="line">                <span class="string">&quot;println&quot;</span>,</span><br><span class="line">                <span class="string">&quot;(Ljava/lang/String;)V&quot;</span>,</span><br><span class="line">                <span class="literal">false</span></span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> HelloWithReturnMethodVisitor </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWithReturnMethodVisitor</span> <span class="keyword">extends</span> <span class="title class_">MethodVisitor</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HelloWithReturnMethodVisitor</span><span class="params">(<span class="type">int</span> api)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(api);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HelloWithReturnMethodVisitor</span><span class="params">(<span class="type">int</span> api, MethodVisitor methodVisitor)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(api, methodVisitor);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">visitInsn</span><span class="params">(<span class="type">int</span> opcode)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (opcode == Opcodes.IRETURN) &#123;</span><br><span class="line">            hack(mv, <span class="string">&quot;insert before return&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">super</span>.visitInsn(opcode);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">hack</span><span class="params">(MethodVisitor mv, String msg)</span> &#123;</span><br><span class="line">        mv.visitFieldInsn(</span><br><span class="line">                Opcodes.GETSTATIC,</span><br><span class="line">                Type.getInternalName(System.class),</span><br><span class="line">                <span class="string">&quot;out&quot;</span>,</span><br><span class="line">                Type.getDescriptor(PrintStream.class)</span><br><span class="line">        );</span><br><span class="line">        mv.visitLdcInsn(msg);</span><br><span class="line">        mv.visitMethodInsn(</span><br><span class="line">                Opcodes.INVOKEVIRTUAL,</span><br><span class="line">                Type.getInternalName(PrintStream.class),</span><br><span class="line">                <span class="string">&quot;println&quot;</span>,</span><br><span class="line">                <span class="string">&quot;(Ljava/lang/String;)V&quot;</span>,</span><br><span class="line">                <span class="literal">false</span></span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> 输出的文件 </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HelloWorld</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;asm insert before&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;this is run&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;asm insert after&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getValue</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;this is getValue&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;insert before return&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p> idea 插件 ASM Bytecode Outline 在java17下有异常没管了</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p> 难度高，需要对指令熟悉.没深入，了解了解</p>
+<h3 id="Cglib"><a href="#Cglib" class="headerlink" title="Cglib"></a>Cglib</h3><div class="tag link"><a class="link-card" title="Github地址" target="_blank" rel="noopener" href="https://github.com/cglib/cglib"><div class="left"><img src="/media/org.volantis/logo/256/safari.png" class="lazyload" data-srcset="/media/org.volantis/logo/256/safari.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div><div class="right"><p class="text">Github地址</p><p class="url">https://github.com/cglib/cglib</p></div></a></div>
+
+<h4 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h4><details green><summary> Main </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cglib</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">Enhancer</span> <span class="variable">enhancer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Enhancer</span>();</span><br><span class="line">        enhancer.setSuperclass(UserServiceImpl.class);</span><br><span class="line">        <span class="comment">// 设置回调方法</span></span><br><span class="line">        enhancer.setCallback(<span class="keyword">new</span> <span class="title class_">UserServiceCglibInterceptor</span>());</span><br><span class="line">        <span class="comment">// 创建代理对象</span></span><br><span class="line">        <span class="type">UserServiceImpl</span> <span class="variable">o</span> <span class="operator">=</span> (UserServiceImpl) enhancer.create();</span><br><span class="line">        o.editUser();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+<details green><summary> UserServiceCglibInterceptor </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserServiceCglibInterceptor</span> <span class="keyword">implements</span> <span class="title class_">MethodInterceptor</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">intercept</span><span class="params">(Object o, Method method, Object[] objects, MethodProxy methodProxy)</span> <span class="keyword">throws</span> Throwable &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;事务开始。。。&quot;</span>);</span><br><span class="line">        <span class="type">Object</span> <span class="variable">result</span> <span class="operator">=</span> methodProxy.invokeSuper(o, objects);</span><br><span class="line">        System.out.println(<span class="string">&quot;事务结束。。。&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+<details green><summary> UserServiceImpl </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserServiceImpl</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addUser</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;增加一个用户。。。&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">editUser</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;编辑一个用户。。。&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+
+<h3 id="引伸"><a href="#引伸" class="headerlink" title="引伸"></a>引伸</h3><ol>
+<li>访问者设计模式</li>
+<li>JavaAssist，Instrumentation接口，JavaAgent</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><div class="tag link"><a class="link-card" title="参考" target="_blank" rel="noopener" href="https://blog.csdn.net/hosaos/article/details/102931887"><div class="left"><img src="/media/org.volantis/logo/256/safari.png" class="lazyload" data-srcset="/media/org.volantis/logo/256/safari.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div><div class="right"><p class="text">参考</p><p class="url">https://blog.csdn.net/hosaos/article/details/102931887</p></div></a></div>
+<div class="tag link"><a class="link-card" title="参考" target="_blank" rel="noopener" href="https://www.cnblogs.com/caoweixiong/p/15213739.html"><div class="left"><img src="/media/org.volantis/logo/256/safari.png" class="lazyload" data-srcset="/media/org.volantis/logo/256/safari.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div><div class="right"><p class="text">参考</p><p class="url">https://www.cnblogs.com/caoweixiong/p/15213739.html</p></div></a></div>
+
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2022/02/27/springboot/springboot-source/springboot-source-overview/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+      
+      
       
     </div>
   
+  
+    
 
-</div>
 
-            </div>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    <!-- 
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/02/27/springboot/springboot-source/springboot-source-start/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/27/springboot/springboot-source/springboot-source-start/"  itemprop="url">
-        Spring Boot 启动流程
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        SpringApplication构造函数1234567891011121314151617@SuppressWarnings(&#123; &quot;unchecked&quot;, &quot;rawtypes&quot; &#125;)public SpringApplication(ResourceLoader resourceLoader, Class&lt;?&gt;... p...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
           
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JVM/" rel="nofollow"><i class="fa fa-hashtag fa-fw" aria-hidden="true"></i><p>JVM</p></a></div>
+  <span hidden itemprop="keywords">JVM</span>
+
+
         
-        <time itemprop="dateCreated datePublished" datetime="2022-02-27T15:47:38+08:00">2022-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Boot/">Spring Boot</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Boot/" itemprop="url"><span itemprop="name">Spring Boot</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/27/springboot/springboot-source/springboot-source-start/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/02/27/springboot/springboot-source/springboot-source-loadconfigfile/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
+    <!-- Custom Files bottomMeta begin -->
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/27/springboot/springboot-source/springboot-source-loadconfigfile/"  itemprop="url">
-        Spring Boot 配置文件读取
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        追踪路径外部配置的加载发生在环境准备的通知中prepareEnvironment通知-&gt;EnvironmentPostProcessorApplicationListener -&gt;ConfigDataEnvironmentPostProcessor
-EnvironmentPostProcessorApplicationListener123456789private void o...
-      
-    
+    <!-- Custom Files bottomMeta end -->
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-27T15:47:38+08:00">2022-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Boot/">Spring Boot</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Boot/" itemprop="url"><span itemprop="name">Spring Boot</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/27/springboot/springboot-source/springboot-source-loadconfigfile/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/02/27/springboot/springboot-source/springboot-source-eventpublish/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/27/springboot/springboot-source/springboot-source-eventpublish/"  itemprop="url">
-        Spring Boot 事件通知
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        总体说明从Spring Boot 启动过程中发现事件的通知由 SpringApplicationRunListeners处理，SpringApplicationRunListeners封装了事件的监听者EventPublishingRunListener，然后由EventPublishingRunListener中的分发器 SimpleApplicationEventMulticaster ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-27T15:47:38+08:00">2022-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Boot/">Spring Boot</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Boot/" itemprop="url"><span itemprop="name">Spring Boot</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/27/springboot/springboot-source/springboot-source-eventpublish/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/02/27/springboot/springboot-source/springboot-source-bean/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/27/springboot/springboot-source/springboot-source-bean/"  itemprop="url">
-        Spring Boot
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        刷新上下文  refreshContext 会创建单例beanspring源码时记录
 
 
-      
-    
-  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-27T15:47:38+08:00">2022-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Boot/">Spring Boot</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Boot/" itemprop="url"><span itemprop="name">Spring Boot</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/27/springboot/springboot-source/springboot-source-bean/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
   
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/02/27/springboot/springboot-source/springboot-source-autoconfig/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/27/springboot/springboot-source/springboot-source-autoconfig/"  itemprop="url">
-        Spring Boot
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        AutoConfigurationImportSelector 获取 META-INF&#x2F;spring.factories 中 EnableAutoConfiguration.class 然后根据Conditional条件加载
-DeferredImportSelectorHandler123456789101112131415public void process() &#123;	...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-27T15:47:38+08:00">2022-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Boot/">Spring Boot</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Boot/" itemprop="url"><span itemprop="name">Spring Boot</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/27/springboot/springboot-source/springboot-source-autoconfig/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-     -->
-  </section>
   <!-- 
-    
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/03/15/spring/classfile/'>
+          <p class='title'>class类文件结构<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Class文件Class文件是一组以8个字节为基础单位的二进制流，各个数据项目严格按照顺序紧凑地排列在文件之中，中间没有添加任何分隔符，这使得整个Class文件中存储的内容几乎全部是程序运行的必...</p>
+        </a>
+      
+    </div>
    -->
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
 
 
-	
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3070,100 +2819,34 @@ DeferredImportSelectorHandler123456789101112131415public void process() &#123;	.
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Farwary</h2>
-        
-        
-        
-      </div>
-    
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/JVM/" href="/categories/JVM/"
-            active-action="action-categoriesJVM"
-            ><div class='name'>JVM</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/MQ/" href="/categories/MQ/"
-            active-action="action-categoriesMQ"
-            ><div class='name'>MQ</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Spring-Boot/" href="/categories/Spring-Boot/"
-            active-action="action-categoriesSpring-Boot"
-            ><div class='name'>Spring Boot</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Spring-Framework/" href="/categories/Spring-Framework/"
-            active-action="action-categoriesSpring-Framework"
-            ><div class='name'>Spring Framework</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ASM"><span class="toc-text">ASM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ASM-Demo1"><span class="toc-text">ASM Demo1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ASM-Demo2"><span class="toc-text">ASM Demo2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cglib"><span class="toc-text">Cglib</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Demo"><span class="toc-text">Demo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E4%BC%B8"><span class="toc-text">引伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
     </div>
   </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/JVM/" style="font-size: 19px; color: #777">JVM</a> <a href="/tags/MQ/" style="font-size: 14px; color: #999">MQ</a> <a href="/tags/Spring-Boot/" style="font-size: 24px; color: #555">Spring Boot</a> <a href="/tags/Spring-Framework/" style="font-size: 19px; color: #777">Spring Framework</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3200,14 +2883,15 @@ DeferredImportSelectorHandler123456789101112131415public void process() &#123;	.
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="asm cglib";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3283,7 +2967,7 @@ DeferredImportSelectorHandler123456789101112131415public void process() &#123;	.
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1647498830536.js"></script>
+<script src="/js/app.js?time=1647498830230.js"></script>
 
 
 
@@ -3475,7 +3159,7 @@ DeferredImportSelectorHandler123456789101112131415public void process() &#123;	.
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1647498830536')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1647498830230')</script>
 
 
 
@@ -3604,19 +3288,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1647498830536")
+        volantis.js("/js/plugins/sites.js?time=1647498830230")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1647498830536")
+        volantis.js("/js/plugins/friends.js?time=1647498830230")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1647498830536")
+        volantis.js("/js/plugins/contributors.js?time=1647498830230")
       }
     
   };
@@ -3741,7 +3425,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1647498830536");
+    return volantis.js("/js/search/hexo.js?time=1647498830230");
   }
 
   function loadSearchService() {
@@ -4032,7 +3716,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://farwary.github.io/","name":"Farwary"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://farwary.github.io/archives/2022/","name":"2022年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://farwary.github.io/archives/2022/2/","name":"2月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Farwary","url":"https://farwary.github.io/","keywords":null,"description":"","author":{"@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","description":""},"publisher":{"@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://farwary.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://farwary.github.io/","name":"Farwary"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/archives/","name":"Archive"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/categories/JVM/","name":"JVM"}},{"@type":"ListItem","position":3,"item":{"@id":"https://farwary.github.io/2022/03/16/spring/asm-cglib/","name":"asm cglib"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"asm cglib","description":"asm cglib","datePublished":"2022-03-16T12:30:37.080Z","dateModified":"2022-03-17T03:34:39.201Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://farwary.github.io/2022/03/16/spring/asm-cglib/"},"author":{"@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/"},"publisher":{"@type":"Organization","name":"Farwary","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://farwary.github.io/2022/03/16/spring/asm-cglib/","wordCount":9,"articleSection":"JVM","keywords":"JVM","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
