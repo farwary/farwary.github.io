@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://farwary.github.io/archives/2022/"/>
+  <link rel="canonical" href="https://farwary.github.io/2022/04/05/zookeeper/zk/"/>
   <!-- 渲染优化 -->
   <!-- <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,25 @@
   <meta content="Farwary" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650353329653" as="style">
+  <link rel="preload" href="/css/style.css?time=1650353329215" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>归档：2022 - Farwary</title>
-  <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Farwary">
-<meta property="og:url" content="https://farwary.github.io/archives/2022/index.html">
+  <title>归档 - Farwary</title>
+  <meta name="keywords" content="zk,null">
+  <meta name="description" content="ZooKeeper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZooKeeper">
+<meta property="og:url" content="https://farwary.github.io/2022/04/05/zookeeper/zk/index.html">
 <meta property="og:site_name" content="Farwary">
+<meta property="og:description" content="ZooKeeper">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://farwary.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-04-05T02:23:56.286Z">
+<meta property="article:modified_time" content="2022-04-19T06:40:18.331Z">
 <meta property="article:author" content="farwary">
+<meta property="article:tag" content="zk">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://farwary.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1806,8 +1811,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650353329653" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650353329653"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1650353329215" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1650353329215"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1884,7 +1889,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1650353329653","sites":"/js/plugins/sites.js?time=1650353329653","friends":"/js/plugins/friends.js?time=1650353329653","parallax":"/js/plugins/parallax.js?time=1650353329653","rightMenu":"/js/plugins/rightMenu.js?time=1650353329653","contributors":"/js/plugins/contributors.js?time=1650353329653","message":"/js/thirdparty/message.js?time=1650353329653","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1650353329653","search":"/js/search/hexo.js?time=1650353329653"},"css":{"style":"/css/style.css?time=1650353329653","message":"/css/message.css?time=1650353329653"}},
+    cdn: {"js":{"app":"/js/app.js?time=1650353329215","sites":"/js/plugins/sites.js?time=1650353329215","friends":"/js/plugins/friends.js?time=1650353329215","parallax":"/js/plugins/parallax.js?time=1650353329215","rightMenu":"/js/plugins/rightMenu.js?time=1650353329215","contributors":"/js/plugins/contributors.js?time=1650353329215","message":"/js/thirdparty/message.js?time=1650353329215","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1650353329215","search":"/js/search/hexo.js?time=1650353329215"},"css":{"style":"/css/style.css?time=1650353329215","message":"/css/message.css?time=1650353329215"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
     lastupdate: new Date('Tue Apr 19 2022 15:28:49 GMT+0800 (中国标准时间)'),
     sidebar: {
@@ -2533,7 +2538,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  dock' style="display: ;">
+      <div id="half" class='cover-wrapper post dock' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s2.loli.net/2022/02/27/5C9ZNBa1JgEtqMm.jpg"></div>
 
@@ -2605,86 +2610,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/04/06/dubbo/dubbo/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/06/dubbo/dubbo/"  itemprop="url">
-        Dubbo
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      Dubbo
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-06T14:06:03+08:00">2022-04-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/dubbo/">dubbo</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/dubbo/" itemprop="url"><span itemprop="name">dubbo</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/06/dubbo/dubbo/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/04/05/zookeeper/zk/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Farwary">
@@ -2694,678 +2620,276 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/05/zookeeper/zk/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         ZooKeeper
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="https://farwary.github.io/" rel="nofollow">
+    <img itemprop="image" src="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg" class="lazyload" data-srcset="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">farwary</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/zk/">zk</a>
     
-      ZooKeeper
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/zk/" itemprop="url"><span itemprop="name">zk</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-05T10:23:56+08:00">2022-04-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/zk/">zk</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/zk/" itemprop="url"><span itemprop="name">zk</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-04-05T10:23:56+08:00">
+  <a class='notlink'>
+    <i class="fa fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年4月5日</p>
+  </a>
+</div>
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3>  <div class="tag link"><a class="link-card" title="官网" target="_blank" rel="noopener" href="https://zookeeper.apache.org/"><div class="left"><img src="https://zookeeper.apache.org/images/favicon.ico" class="lazyload" data-srcset="https://zookeeper.apache.org/images/favicon.ico" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div><div class="right"><p class="text">官网</p><p class="url">https://zookeeper.apache.org/</p></div></a></div>
+
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>统一命名服务、统一配置管理、统一集群管理、服务器节点动态上下线、软负载均衡等</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>Zookeeper：一个领导者（Leader），多个跟随者（Follower）组成的集群。</li>
+<li>集群中只要有半数以上节点存活，Zookeeper集群就能正常服务。所 以Zookeeper适合安装奇数台服务器。</li>
+<li>全局数据一致：每个Server保存一份相同的数据副本，Client无论连接到哪个Server，数据都是一致的。</li>
+<li>更新请求顺序执行，来自同一个Client的更新请求按其发送顺序依次执行。</li>
+<li>数据更新原子性，一次数据更新要么成功，要么失败。</li>
+<li>实时性，在一定时间范围内，Client能读到最新数据。</li>
+</ol>
+<h3 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h3><details green><summary> 集群搭建 </summary>
+              <div class='content'>
+              <ol><li>下载解压</li><li>进入conf修改配置文件zoo.conf<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// zoo.cfg</span></span><br><span class="line">tickTime=<span class="number">2000</span></span><br><span class="line">dataDir=/home/wwj/zk001/conf/zoo</span><br><span class="line">initLimit=<span class="number">5</span></span><br><span class="line">syncLimit=<span class="number">2</span></span><br><span class="line">dynamicConfigFile=/home/wwj/zk001/conf/zoo.cfg.dynamic</span><br><span class="line"><span class="comment">// zoo.cfg.dynamic</span></span><br><span class="line">server<span class="number">.1</span>=<span class="number">172.29</span><span class="number">.20</span><span class="number">.217</span>:<span class="number">2888</span>:<span class="number">3888</span>;<span class="number">2181</span></span><br><span class="line">server<span class="number">.2</span>=<span class="number">172.29</span><span class="number">.20</span><span class="number">.217</span>:<span class="number">2889</span>:<span class="number">3889</span>;<span class="number">2182</span></span><br><span class="line">server<span class="number">.3</span>=<span class="number">172.29</span><span class="number">.20</span><span class="number">.217</span>:<span class="number">2890</span>:<span class="number">3890</span>;<span class="number">2183</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// server.A=B:C:D</span></span><br><span class="line"><span class="comment">// A 一个数字，表示这个是第几号服务器</span></span><br><span class="line"><span class="comment">// B 服务器的地址</span></span><br><span class="line"><span class="comment">// C 服务器 Follower 与集群中的 Leader 服务器交换信息的端口</span></span><br><span class="line"><span class="comment">// D 如果集群中的 Leader 服务器挂了，则用这个端口来进行选举</span></span><br></pre></td></tr></table></figure></li><li>在dataDir文件夹下添加文件myid，并且在文件中添加与server对应的编号</li><li>启动<details green><summary> 操作命令 </summary>          <div class='content'>          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 启动</span></span><br><span class="line">bin/zkServer.sh start</span><br><span class="line"><span class="comment">// 查看状态</span></span><br><span class="line">bin/zkServer.sh status</span><br><span class="line"><span class="comment">// 停止</span></span><br><span class="line">bin/zkServer.sh stop</span><br><span class="line"><span class="comment">// 启动客户端</span></span><br><span class="line">bin/zkCli.sh</span><br></pre></td></tr></table></figure>          </div>        </details></li></ol>
+              </div>
+            </details>
+
+
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><a target="_blank" rel="noopener" href="https://zookeeper.apache.org/doc/r3.8.0/zookeeperAdmin.html#sc_configuration">https://zookeeper.apache.org/doc/r3.8.0/zookeeperAdmin.html#sc_configuration</a></p>
+<details green><summary> 配置文件 </summary>
+              <div class='content'>
+              <h4 id="最低配置"><a href="#最低配置" class="headerlink" title="最低配置"></a>最低配置</h4><ol><li>clientPort</li><li>secureClientPort</li><li>observerMasterPort</li><li>dataDir</li><li>tickTime  通信心跳时间，Zookeeper服务器与客户端心跳时间，单位毫秒<h4 id="集群配置"><a href="#集群配置" class="headerlink" title="集群配置"></a>集群配置</h4></li><li>initLimit Leader和Follower初始连接时能容忍的最多心跳数（tickTime的数量）</li><li>syncLimit Leader和Follower之间通信时间如果超过syncLimit * tickTime，Leader认为Follwer死掉，从服务器列表中删除Follwer。</li><li>server.x&#x3D;[hostname]:nnnnn[:nnnnn]</li></ol>
+              </div>
+            </details>
+
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ls path</td>
+<td>使用 ls 命令来查看当前 znode 的子节点 [可监听] <br> -w 监听子节点变化 <br> -s 附加次级信息</td>
+</tr>
+<tr>
+<td>create</td>
+<td>普通创建 <br>-s 含有序列 <br>-e 临时（重启或者超时消失）</td>
+</tr>
+<tr>
+<td>get path</td>
+<td>获得节点的值 [可监听] <br>-w 监听节点内容变化 <br>-s 附加次级信息</td>
+</tr>
+<tr>
+<td>set</td>
+<td>设置节点的具体值</td>
+</tr>
+<tr>
+<td>stat</td>
+<td>查看节点状态</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>删除节点</td>
+</tr>
+<tr>
+<td>deleteall</td>
+<td>递归删除节点</td>
+</tr>
+</tbody></table>
+<h3 id="选举机制"><a href="#选举机制" class="headerlink" title="选举机制"></a>选举机制</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ol>
+<li>SID：服务器ID。用来唯一标识一台ZooKeeper集群中的机器，每台机器不能重复，和myid一致。</li>
+<li>ZXID：事务ID。ZXID是一个事务ID，用来标识一次服务器状态的变更。在某一时刻，集群中的每台机器的ZXID值不一定完全一致，这和ZooKeeper服务器对于客户端“更新请求”的处理逻辑有关。</li>
+<li>Epoch：每个Leader任期的代号。没有Leader时同一轮投票过程中的逻辑时钟值是相同的。每投完一次票这个数据就会增加</li>
+</ol>
+<h4 id="第一次启动选举"><a href="#第一次启动选举" class="headerlink" title="第一次启动选举"></a>第一次启动选举</h4><p>假设有5台服务器</p>
+<ol>
+<li>服务器1启 动，发起一次选举。服务器1投自己一票。此时服务器1票数一票，不够半数以上（3票），选举无法完成，服务器1状态保持为LOOKING；</li>
+<li>服务器2启动，再发起一次选举。服务器1和2分别投自己一票并交换选票信息：此时服务器1发现服务器2的myid比自己目前投票推举的（服务器1）大，更改选票为推举服务器2。此时服务器1票数0票，服务器2票数2票，没有半数以上结果，选举无法完成，服务器1，2状态保持LOOKING</li>
+<li>服务器3启动，发起一次选举。此时服务器1和2都会更改选票为服务器3。此次投票结果：服务器1为0票，服务器2为0票，服务器3为3票。此时服务器3的票数已经超过半数，服务器3当选Leader。服务器1，2更改状态为FOLLOWING，服务器3更改状态为LEADING；</li>
+<li>服务器4启动，发起一次选举。此时服务器1，2，3已经不是LOOKING状态，不会更改选票信息。交换选票信息结果：服务器3为3票，服务器4为1票。此时服务器4服从多数，更改选票信息为服务器3，并更改状态为FOLLOWING；</li>
+<li>服务器5启动，同4一样。</li>
+</ol>
+<h4 id="非第一次选举"><a href="#非第一次选举" class="headerlink" title="非第一次选举"></a>非第一次选举</h4><p>如果服务器在运行期间无法和Leader保持连接则进入选举</p>
+<ol>
+<li>如果集群中有Leader。<br>告知有Leader只需要和Leader连接即可</li>
+<li>如果集群中没有Leader<br>选举Leader规则： ①EPOCH大的直接胜出 ②EPOCH相同，事务id大的胜出 ③事务id相同，服务器id大的胜出</li>
+</ol>
+<h3 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h3><ol>
+<li>持久化目录节点 客户端与Zookeeper断开连接后，该节点依旧存在</li>
+<li>持久化顺序编号目录节点 客户端与Zookeeper断开连接后，该节点依旧存在，只是Zookeeper给该节点名称进行顺序编号</li>
+<li>临时目录节点 客户端与Zookeeper断开连接后，该节点被删除</li>
+<li>临时顺序编号目录节点 客户端与 Zookeeper 断开连接后，该节点被删除，只是Zookeeper给该节点名称进行顺序编号。</li>
+</ol>
+<h3 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h3><ol>
+<li>首先要有一个main()线程</li>
+<li>在main线程中创建Zookeeper客户端，这时就会创建两个线程，一个负责网络连接通信（connet），一个负责监听（listener）。</li>
+<li>通过connect线程将注册的监听事件发送给Zookeeper。</li>
+<li>在Zookeeper的注册监听器列表中将注册的监听事件添加到列表中。</li>
+<li>Zookeeper监听到有数据或路径变化，就会将这个消息发送给listener线程。</li>
+<li>listener线程内部调用了process()方法。</li>
+</ol>
+<h3 id="客户端向服务端写数据流程"><a href="#客户端向服务端写数据流程" class="headerlink" title="客户端向服务端写数据流程"></a>客户端向服务端写数据流程</h3><ol>
+<li>写流程之写入请求直接发送给Leader节点<br> Leader 写入并下发给follower ,当半数应答写成功则应答客户端写成功，</li>
+<li>写流程之写入请求发送给follower节点<br>follower将写转发给Leader，leader写入并发送给所有follower，当半数应答写入成功则把成功的消息给原来的follower，由他来应答客户端成功</li>
+</ol>
+<h3 id="Curator"><a href="#Curator" class="headerlink" title="Curator"></a>Curator</h3><details green><summary> maven </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// maven</span></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.curator&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;curator-recipes&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;<span class="number">5.2</span><span class="number">.1</span>&lt;/version&gt;</span><br><span class="line">        &lt;exclusions&gt;</span><br><span class="line">            &lt;exclusion&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.zookeeper&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;zookeeper&lt;/artifactId&gt;</span><br><span class="line">            &lt;/exclusion&gt;</span><br><span class="line">        &lt;/exclusions&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> zk.properties </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zookeeper.server= <span class="number">192.168</span><span class="number">.0</span><span class="number">.117</span>:<span class="number">2181</span></span><br><span class="line">zookeeper.sessionTimeoutMs=<span class="number">6000</span></span><br><span class="line">zookeeper.connectionTimeoutMs=<span class="number">6000</span></span><br><span class="line">zookeeper.maxRetries=<span class="number">3</span></span><br><span class="line">zookeeper.baseSleepTimeMs=<span class="number">2000</span></span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> ZkClient </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ZkClient</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> CuratorFramework client;</span><br><span class="line">    <span class="keyword">private</span> String zookeeperServer;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> sessionTimeoutMs;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> connectionTimeoutMs;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> baseSleepTimeMs;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> maxRetries;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">RetryPolicy</span> <span class="variable">retryPolicy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ExponentialBackoffRetry</span>(baseSleepTimeMs, maxRetries);</span><br><span class="line">        client = CuratorFrameworkFactory.builder().connectString(zookeeperServer).retryPolicy(retryPolicy)</span><br><span class="line">                .sessionTimeoutMs(sessionTimeoutMs).connectionTimeoutMs(connectionTimeoutMs).build();</span><br><span class="line">        client.start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;close&quot;</span>);</span><br><span class="line">        client.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> CuratorFramework <span class="title function_">getClient</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> client;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> ZooKeeperConfig </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@PropertySource(value = &quot;classpath:/Zookeeper.properties&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ZooKeeperConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;zookeeper.server&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String zookeeperServer;</span><br><span class="line">    <span class="meta">@Value((&quot;$&#123;zookeeper.sessionTimeoutMs&#125;&quot;))</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> sessionTimeoutMs;</span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;zookeeper.connectionTimeoutMs&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> connectionTimeoutMs;</span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;zookeeper.maxRetries&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> maxRetries;</span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;zookeeper.baseSleepTimeMs&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> baseSleepTimeMs;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean(initMethod = &quot;init&quot;, destroyMethod = &quot;stop&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> ZkClient <span class="title function_">zkClient</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">ZkClient</span> <span class="variable">zkClient</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ZkClient</span>();</span><br><span class="line">        zkClient.setZookeeperServer(zookeeperServer);</span><br><span class="line">        zkClient.setSessionTimeoutMs(sessionTimeoutMs);</span><br><span class="line">        zkClient.setConnectionTimeoutMs(connectionTimeoutMs);</span><br><span class="line">        zkClient.setMaxRetries(maxRetries);</span><br><span class="line">        zkClient.setBaseSleepTimeMs(baseSleepTimeMs);</span><br><span class="line">        <span class="keyword">return</span> zkClient;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details green><summary> Curator </summary>
+              <div class='content'>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest(classes = ZooKeeperApplication.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ZkTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ZkClient zkClient;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建节点</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">create</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 基本创建 默认存了ip</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> zkClient.getClient().create().forPath(<span class="string">&quot;/Dog&quot;</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * PERSISTENT 持久化目录节点</span></span><br><span class="line"><span class="comment">         * PERSISTENT_SEQUENTIAL 持久化自动编号节点</span></span><br><span class="line"><span class="comment">         * EPHEMERAL 临时目录节点</span></span><br><span class="line"><span class="comment">         * EPHEMERAL_SEQUENTIAL 临时自动编号节点</span></span><br><span class="line"><span class="comment">         * CONTAINER：容器节点，用于Leader、Lock等特殊用途，当容器节点不存在任何子节点时，容器将成为服务器在将来某个时候删除的候选节点。</span></span><br><span class="line"><span class="comment">         * PERSISTENT_WITH_TTL：带TTL（time-to-live，存活时间）的持久节点，节点在TTL时间之内没有得到更新并且没有子节点，就会被自动删除。</span></span><br><span class="line"><span class="comment">         * PERSISTENT_SEQUENTIAL_WITH_TTL：带TTL（time-to-live，存活时间）和单调递增序号的持久节点，节点在TTL时间之内没有得到更新并且没有子节点，就会被自动删除。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 创建临时节点</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> zkClient.getClient().create().withMode(CreateMode.EPHEMERAL_SEQUENTIAL).forPath(<span class="string">&quot;/Cat&quot;</span>);</span><br><span class="line">        System.out.println(s1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建多级节点</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> zkClient.getClient().create().creatingParentsIfNeeded().forPath(<span class="string">&quot;/Dog/Bichon&quot;</span>);</span><br><span class="line">        System.out.println(s2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 查询子节点</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getList</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        List&lt;String&gt; strings = zkClient.getClient().getChildren().forPath(<span class="string">&quot;/&quot;</span>);</span><br><span class="line">        strings.forEach(c -&gt; &#123;</span><br><span class="line">            System.out.println(c);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取节点数据</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getData</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">byte</span>[] bytes = zkClient.getClient().getData().forPath(<span class="string">&quot;/Dog&quot;</span>);</span><br><span class="line">        System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(bytes));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 修改</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">edit</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">Stat</span> <span class="variable">stat</span> <span class="operator">=</span> zkClient.getClient().setData().forPath(<span class="string">&quot;/Dog&quot;</span>, <span class="string">&quot;Dog&quot;</span>.getBytes(StandardCharsets.UTF_8));</span><br><span class="line">        System.out.println(stat);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        // 根据版本修改</span></span><br><span class="line"><span class="comment">//        Stat stat1 = new Stat();</span></span><br><span class="line"><span class="comment">//        byte[] bytes = zkClient.getClient().getData().storingStatIn(stat1).forPath(&quot;/Dog&quot;);</span></span><br><span class="line"><span class="comment">//        Stat stat2 = zkClient.getClient().setData().withVersion(stat.getVersion()).forPath(&quot;/Dog&quot;, &quot;Dog&quot;.getBytes(StandardCharsets.UTF_8));</span></span><br><span class="line"><span class="comment">//        System.out.println(stat2);</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 删除节点</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">delete</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> zkClient.getClient().create().forPath(<span class="string">&quot;/Dog2&quot;</span>);</span><br><span class="line"><span class="comment">//        Void unused = zkClient.getClient().delete().forPath(&quot;/Dog2&quot;);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        // 删除带有子节点的节点</span></span><br><span class="line"><span class="comment">//        zkClient.getClient().delete().deletingChildrenIfNeeded().forPath(&quot;/Dog2&quot;);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        // 必须删除成功</span></span><br><span class="line"><span class="comment">//        zkClient.getClient().delete().guaranteed().forPath(&quot;/Dog2&quot;);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 删除后回调</span></span><br><span class="line">        zkClient.getClient().delete().inBackground((a, e) -&gt; &#123;</span><br><span class="line">            System.out.println(a);</span><br><span class="line">            System.out.println(e);</span><br><span class="line">        &#125;).forPath(<span class="string">&quot;/Dog2&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 监听一次</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">watchs</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">byte</span>[] bytes = zkClient.getClient().getData().usingWatcher(<span class="keyword">new</span> <span class="title class_">CuratorWatcher</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">process</span><span class="params">(WatchedEvent event)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">                System.out.println(event);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).forPath(<span class="string">&quot;/Dog&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">curatorCache</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">CuratorCache</span> <span class="variable">cache</span> <span class="operator">=</span> CuratorCache.build(zkClient.getClient(), <span class="string">&quot;/Dog&quot;</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="type">CuratorCacheListener</span> <span class="variable">listener</span> <span class="operator">=</span> CuratorCacheListener.builder()</span><br><span class="line">                    .forCreates(node -&gt; System.out.println(String.format(<span class="string">&quot;Node created: [%s]&quot;</span>, node)))</span><br><span class="line">                    .forChanges((oldNode, node) -&gt; System.out.println(String.format(<span class="string">&quot;Node changed. Old: [%s] New: [%s]&quot;</span>, oldNode, node)))</span><br><span class="line">                    .forDeletes(oldNode -&gt; System.out.println(String.format(<span class="string">&quot;Node deleted. Old value: [%s]&quot;</span>, oldNode)))</span><br><span class="line">                    .forInitialized(() -&gt; System.out.println(<span class="string">&quot;Cache initialized&quot;</span>))</span><br><span class="line">                    .build();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// register the listener</span></span><br><span class="line">            cache.listenable().addListener(listener);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// the cache must be started</span></span><br><span class="line">            cache.start();</span><br><span class="line">            Thread.sleep(<span class="number">10000</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lock</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">InterProcessMutex</span> <span class="variable">lock1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InterProcessMutex</span>(zkClient.getClient(), <span class="string">&quot;/lock&quot;</span>);</span><br><span class="line">        <span class="type">InterProcessMutex</span> <span class="variable">lock2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InterProcessMutex</span>(zkClient.getClient(), <span class="string">&quot;/lock&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                <span class="comment">// 获取锁对象</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    lock1.acquire();</span><br><span class="line">                    System.out.println(<span class="string">&quot;线程 1 获取锁&quot;</span>);</span><br><span class="line">                    <span class="comment">// 测试锁重入</span></span><br><span class="line">                    lock1.acquire();</span><br><span class="line">                    System.out.println(<span class="string">&quot;线程 1 再次获取锁&quot;</span>);</span><br><span class="line">                    Thread.sleep(<span class="number">5</span> * <span class="number">1000</span>);</span><br><span class="line">                    lock1.release();</span><br><span class="line">                    System.out.println(<span class="string">&quot;线程 1 释放锁&quot;</span>);</span><br><span class="line">                    lock1.release();</span><br><span class="line">                    System.out.println(<span class="string">&quot;线程 1 再次释放锁&quot;</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                <span class="comment">// 获取锁对象</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    lock2.acquire();</span><br><span class="line">                    System.out.println(<span class="string">&quot;线程 2 获取锁&quot;</span>);</span><br><span class="line">                    <span class="comment">// 测试锁重入</span></span><br><span class="line">                    lock2.acquire();</span><br><span class="line">                    System.out.println(<span class="string">&quot;线程 2 再次获取锁&quot;</span>);</span><br><span class="line">                    Thread.sleep(<span class="number">5</span> * <span class="number">1000</span>);</span><br><span class="line">                    lock2.release();</span><br><span class="line">                    System.out.println(<span class="string">&quot;线程 2 释放锁&quot;</span>);</span><br><span class="line">                    lock2.release();</span><br><span class="line">                    System.out.println(<span class="string">&quot;线程 2 再次释放锁&quot;</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">        Thread.sleep(<span class="number">500000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+
+
+
+<h3 id="ZAB"><a href="#ZAB" class="headerlink" title="ZAB"></a>ZAB</h3><p>ZAB又称作 zooKeeper原子广播协议（ZooKeeper Atomic Broadcast）。<br>原子：一次操作只能成功或者失败，不会存在中间状态<br>广播：通知集群中的全部（或者部分）节点</p>
+<h4 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h4><p>（1）客户端发起一个写操作请求。<br>（2）Leader服务器将客户端的请求转化为事务Proposal 提案，同时为每个Proposal 分配一个全局的ID，即zxid。<br>（3）Leader服务器为每个Follower服务器分配一个单独的队列，然后将需要广播的 Proposal依次放到队列中去，并且根据FIFO策略进行消息发送。<br>（4）Follower接收到Proposal后，会首先将其以事务日志的方式写入本地磁盘中，写入成功后向Leader反馈一个Ack响应消息。<br>（5）Leader接收到超过半数以上Follower的Ack响应消息后，即认为消息发送成功，可以发送commit消息。<br>（6）Leader向所有Follower广播commit消息，同时自身也会完成事务提交。Follower 接收到commit消息后，会将上一条事务提交。<br>（7）Zookeeper采用Zab协议的核心，就是只要有一台服务器提交了Proposal，就要确保所有的服务器最终都能正确提交Proposal。</p>
+<h4 id="崩溃恢复"><a href="#崩溃恢复" class="headerlink" title="崩溃恢复"></a>崩溃恢复</h4><p>1）假设两种服务器异常情况：<br>（1）假设一个事务在Leader提出之后，Leader挂了。<br>（2）一个事务在Leader上提交了，并且过半的Follower都响应Ack了，但是Leader在Commit消息发出之前挂了。<br>2）Zab协议崩溃恢复要求满足以下两个要求：<br>（1）确保已经被Leader提交的提案Proposal，必须最终被所有的Follower服务器提交。 （已经产生的提案，Follower必须执行）<br>（2）确保丢弃已经被Leader提出的，但是没有被提交的Proposal。（丢弃胎死腹中的提案）</p>
+<h4 id="Leader选举"><a href="#Leader选举" class="headerlink" title="Leader选举"></a>Leader选举</h4><ol>
+<li>新选举出来的Leader不能包含未提交的Proposal。即新Leader必须都是已经提交了Proposal的Follower服务器节点。</li>
+<li>新选举的Leader节点中含有最大的zxid。这样做的好处是可以避免Leader服务器检查Proposal的提交和丢弃工作。<h4 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h4></li>
+<li>完成Leader选举后，在正式开始工作之前（接收事务请求，然后提出新的Proposal），Leader服务器会首先确认事务日志中的所有的Proposal 是否已经被集群中过半的服务器Commit。</li>
+<li>Leader服务器需要确保所有的Follower服务器能够接收到每一条事务的Proposal，并且能将所有已经提交的事务Proposal应用到内存数据中。等到Follower将所有尚未同步的事务Proposal都从Leader服务器上同步过，并且应用到内存数据中以后，Leader才会把该Follower加入到真正可用的Follower列表中。</li>
+</ol>
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2022/04/05/zookeeper/zk/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+      
+      
       
     </div>
   
+  
+    
 
-</div>
 
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/03/31/redis/redis/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/03/31/redis/redis/"  itemprop="url">
-        redis
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      redis
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-03-31T13:43:08+08:00">2022-03-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/redis/">redis</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/redis/" itemprop="url"><span itemprop="name">redis</span></a>
-            </span>
-          
-        
-      </div>
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
       
-        <div>
-          <a class='readmore' href='/2022/03/31/redis/redis/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/zk/" rel="nofollow"><i class="fa fa-hashtag fa-fw" aria-hidden="true"></i><p>zk</p></a></div>
+  <span hidden itemprop="keywords">zk</span>
+
+
+        
       
     </div>
-  
-
-</div>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/03/16/spring/asm-cglib-objenesis/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
+    <!-- Custom Files bottomMeta begin -->
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/03/16/spring/asm-cglib-objenesis/"  itemprop="url">
-        asm cglib objenesis
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      asm cglib objenesis
-    
+    <!-- Custom Files bottomMeta end -->
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-03-16T20:30:37+08:00">2022-03-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/JVM/">JVM</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/JVM/" itemprop="url"><span itemprop="name">JVM</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/16/spring/asm-cglib-objenesis/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/03/15/spring/classfile/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/03/15/spring/classfile/"  itemprop="url">
-        class类文件结构
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      class类文件结构
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-03-15T18:47:50+08:00">2022-03-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/JVM/">JVM</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/JVM/" itemprop="url"><span itemprop="name">JVM</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/15/spring/classfile/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-            </div>
-          
-        
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/03/15/spring/spring-framework-overview/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/03/15/spring/spring-framework-overview/"  itemprop="url">
-        Spring Framework 源码解读
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      Spring Framework 源码解读
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-03-15T17:35:57+08:00">2022-03-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Framework/">Spring Framework</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Framework/" itemprop="url"><span itemprop="name">Spring Framework</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/15/spring/spring-framework-overview/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/03/08/mq/rocketmq/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/03/08/mq/rocketmq/"  itemprop="url">
-        RocketMQ
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      RocketMQ
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-03-08T13:56:18+08:00">2022-03-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/MQ/">MQ</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/MQ/" itemprop="url"><span itemprop="name">MQ</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/08/mq/rocketmq/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-            </div>
-          
-        
-          
-        
-      
-    
-    <!-- 
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/04/11/spring/spring-framework-beans/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/11/spring/spring-framework-beans/"  itemprop="url">
-        spring beans
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        BeanDefinition类图 
 
 
-
-
-AttributeAccessor   定义了属性的相关操作
-BeanMetadataElement 定义获取配置源能力
-BeanDefinition      定义了对描述Bean的属性的相关操作 BeanDefinition详细信息 
-              
-              12345678910111213141516171...
-      
-    
-  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-11T14:21:09+08:00">2022-04-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Framework/">Spring Framework</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Framework/" itemprop="url"><span itemprop="name">Spring Framework</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/11/spring/spring-framework-beans/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
   
 
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/03/15/spring/spring-framework-core/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/03/15/spring/spring-framework-core/"  itemprop="url">
-        spring core
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Core模块包含
-
-asm        ASM is an all purpose Java bytecode manipulation and analysis framework. 取自官网https://asm.ow2.io/
-cglib      Byte Code Generation Library is high level API to generate and trans...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-03-15T17:38:47+08:00">2022-03-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Framework/">Spring Framework</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Framework/" itemprop="url"><span itemprop="name">Spring Framework</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/15/spring/spring-framework-core/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://farwary.github.io/2022/02/27/springboot/springboot-source/springboot-source-start/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Farwary">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Farwary">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/27/springboot/springboot-source/springboot-source-start/"  itemprop="url">
-        Spring Boot 启动流程
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        SpringApplication构造函数1234567891011121314151617@SuppressWarnings(&#123; &quot;unchecked&quot;, &quot;rawtypes&quot; &#125;)public SpringApplication(ResourceLoader resourceLoader, Class&lt;?&gt;... p...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='https://farwary.github.io/'><img src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg">
-            <meta itemprop="name" content="farwary">
-            <meta itemprop="url" content="https://farwary.github.io/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-27T15:47:38+08:00">2022-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Spring-Boot/">Spring Boot</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Spring-Boot/" itemprop="url"><span itemprop="name">Spring Boot</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/27/springboot/springboot-source/springboot-source-start/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-     -->
-  </section>
   <!-- 
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2022/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/04/06/dubbo/dubbo/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Dubbo</p>
+          <p class='content'>官网  官网https://dubbo.apache.org/zh/
+
+基本使用https://github.com/apache/dubbo/tree/3.0/dubbo-demo/dubbo...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/03/31/redis/redis/'>
+          <p class='title'>redis<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>官网  Redis官网https://redis.io/
+
+  Redis中文网http://www.redis.cn/
+
+数据结构底层数据结构 https://www.cnblogs.com/...</p>
+        </a>
+      
+    </div>
    -->
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
 
 
-	
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3373,115 +2897,34 @@ cglib      Byte Code Generation Library is high level API to generate and trans.
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s2.loli.net/2022/02/27/SuMmJD9HcZ8yI6o.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Farwary</h2>
-        
-        
-        
-      </div>
-    
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/JVM/" href="/categories/JVM/"
-            active-action="action-categoriesJVM"
-            ><div class='name'>JVM</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/MQ/" href="/categories/MQ/"
-            active-action="action-categoriesMQ"
-            ><div class='name'>MQ</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Spring-Boot/" href="/categories/Spring-Boot/"
-            active-action="action-categoriesSpring-Boot"
-            ><div class='name'>Spring Boot</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Spring-Framework/" href="/categories/Spring-Framework/"
-            active-action="action-categoriesSpring-Framework"
-            ><div class='name'>Spring Framework</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/dubbo/" href="/categories/dubbo/"
-            active-action="action-categoriesdubbo"
-            ><div class='name'>dubbo</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/redis/" href="/categories/redis/"
-            active-action="action-categoriesredis"
-            ><div class='name'>redis</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/zk/" href="/categories/zk/"
-            active-action="action-categorieszk"
-            ><div class='name'>zk</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E7%BD%91"><span class="toc-text">官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="toc-text">集群搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E4%BD%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">最低配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE"><span class="toc-text">集群配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E4%B8%BE%E6%9C%BA%E5%88%B6"><span class="toc-text">选举机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8%E9%80%89%E4%B8%BE"><span class="toc-text">第一次启动选举</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%80%89%E4%B8%BE"><span class="toc-text">非第一次选举</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B"><span class="toc-text">节点类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-text">监听器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%90%91%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%86%99%E6%95%B0%E6%8D%AE%E6%B5%81%E7%A8%8B"><span class="toc-text">客户端向服务端写数据流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Curator"><span class="toc-text">Curator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZAB"><span class="toc-text">ZAB</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%81%9A"><span class="toc-text">怎么做</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B4%A9%E6%BA%83%E6%81%A2%E5%A4%8D"><span class="toc-text">崩溃恢复</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Leader%E9%80%89%E4%B8%BE"><span class="toc-text">Leader选举</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5"><span class="toc-text">数据同步</span></a></li></ol></li></ol>
     </div>
   </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/JVM/" style="font-size: 17.33px; color: #828282">JVM</a> <a href="/tags/MQ/" style="font-size: 14px; color: #999">MQ</a> <a href="/tags/Spring-Boot/" style="font-size: 24px; color: #555">Spring Boot</a> <a href="/tags/Spring-Framework/" style="font-size: 20.67px; color: #6c6c6c">Spring Framework</a> <a href="/tags/dubbo/" style="font-size: 14px; color: #999">dubbo</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/zk/" style="font-size: 14px; color: #999">zk</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3518,14 +2961,15 @@ cglib      Byte Code Generation Library is high level API to generate and trans.
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="ZooKeeper";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3601,7 +3045,7 @@ cglib      Byte Code Generation Library is high level API to generate and trans.
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1650353329653.js"></script>
+<script src="/js/app.js?time=1650353329215.js"></script>
 
 
 
@@ -3793,7 +3237,7 @@ cglib      Byte Code Generation Library is high level API to generate and trans.
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1650353329653')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1650353329215')</script>
 
 
 
@@ -3922,19 +3366,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650353329653")
+        volantis.js("/js/plugins/sites.js?time=1650353329215")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650353329653")
+        volantis.js("/js/plugins/friends.js?time=1650353329215")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650353329653")
+        volantis.js("/js/plugins/contributors.js?time=1650353329215")
       }
     
   };
@@ -4059,7 +3503,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650353329653");
+    return volantis.js("/js/search/hexo.js?time=1650353329215");
   }
 
   function loadSearchService() {
@@ -4350,7 +3794,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://farwary.github.io/","name":"Farwary"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://farwary.github.io/archives/2022/","name":"2022年"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Farwary","url":"https://farwary.github.io/","keywords":null,"description":"","author":{"@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","description":""},"publisher":{"@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://farwary.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://farwary.github.io/","name":"Farwary"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/archives/","name":"Archive"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/categories/zk/","name":"zk"}},{"@type":"ListItem","position":3,"item":{"@id":"https://farwary.github.io/2022/04/05/zookeeper/zk/","name":"ZooKeeper"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ZooKeeper","description":"ZooKeeper","datePublished":"2022-04-05T02:23:56.286Z","dateModified":"2022-04-19T06:40:18.331Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://farwary.github.io/2022/04/05/zookeeper/zk/"},"author":{"@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/"},"publisher":{"@type":"Organization","name":"Farwary","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://farwary.github.io/2022/04/05/zookeeper/zk/","wordCount":9,"articleSection":"zk","keywords":"zk","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
