@@ -20,7 +20,7 @@
   <meta content="Farwary" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1651556436654" as="style">
+  <link rel="preload" href="/css/style.css?time=1655706974622" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://farwary.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-05-01T14:56:38.504Z">
-<meta property="article:modified_time" content="2022-05-03T05:38:14.227Z">
+<meta property="article:modified_time" content="2022-05-04T04:19:42.581Z">
 <meta property="article:author" content="farwary">
 <meta property="article:tag" content="破解">
 <meta name="twitter:card" content="summary">
@@ -1811,8 +1811,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1651556436654" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1651556436654"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1655706974622" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1655706974622"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1889,9 +1889,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1651556436654","sites":"/js/plugins/sites.js?time=1651556436654","friends":"/js/plugins/friends.js?time=1651556436654","parallax":"/js/plugins/parallax.js?time=1651556436654","rightMenu":"/js/plugins/rightMenu.js?time=1651556436654","contributors":"/js/plugins/contributors.js?time=1651556436654","message":"/js/thirdparty/message.js?time=1651556436654","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1651556436654","search":"/js/search/hexo.js?time=1651556436654"},"css":{"style":"/css/style.css?time=1651556436654","message":"/css/message.css?time=1651556436654"}},
+    cdn: {"js":{"app":"/js/app.js?time=1655706974622","sites":"/js/plugins/sites.js?time=1655706974622","friends":"/js/plugins/friends.js?time=1655706974622","parallax":"/js/plugins/parallax.js?time=1655706974622","rightMenu":"/js/plugins/rightMenu.js?time=1655706974622","contributors":"/js/plugins/contributors.js?time=1655706974622","message":"/js/thirdparty/message.js?time=1655706974622","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1655706974622","search":"/js/search/hexo.js?time=1655706974622"},"css":{"style":"/css/style.css?time=1655706974622","message":"/css/message.css?time=1655706974622"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date('Tue May 03 2022 13:40:36 GMT+0800 (中国标准时间)'),
+    lastupdate: new Date('Mon Jun 20 2022 14:36:14 GMT+0800 (中国标准时间)'),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2691,7 +2691,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>下断点  BP VirtualFree<br> 运行<br> 取消断点<br> ALT+F9<br> 查找 push 8000 （这里和教程不一样 我直接单步调式了，最终还是到达oep）</li>
 <li>下断点 bp VirtualAlloc</li>
 <li>最后一次异常法</li>
-<li>GetVersion<br>符号-&gt;kernel32.dll-&gt;GetVersion<br>往下拉一点点可以看到 55 push ebp</li>
+<li>GetVersion<br>符号-&gt;kernel32.dll-&gt;GetVersion<br>往下拉一点点可以看到 55 push ebp</div><h2 id="手脱-EZIP壳"><a href="#手脱-EZIP壳" class="headerlink" title="手脱 EZIP壳"></a>手脱 EZIP壳</h2><div class="story post-story"><h2 id="手脱-TELock0-98b1壳"><a href="#手脱-TELock0-98b1壳" class="headerlink" title="手脱 TELock0.98b1壳"></a>手脱 TELock0.98b1壳</h2>脱壳成功但是运行不起来，win11 下无法修复（未解决）</li>
 </ol>
 
 </div>
@@ -2737,6 +2737,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <!-- 
     <div class="prev-next">
+      
+        <a class='prev' href='/2022/05/05/mq/kafka/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Kafka</p>
+          <p class='content'>
+
+
+消息队列的两种模式
+点对点（1对一）
+发布&#x2F;订阅模式（1对多）
+
+
+</p>
+        </a>
       
       
         <a class='next' href='/2022/05/01/pojie52/tools/'>
@@ -2841,7 +2854,7 @@ x64dbggithubhttps://github.com/x64dbg...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1UPX%E5%A3%B3"><span class="toc-text">手脱UPX壳</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%AD%A5%E8%B7%9F%E8%B8%AA%E6%B3%95"><span class="toc-text">单步跟踪法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ESP%E5%AE%9A%E5%BE%8B%E6%B3%95"><span class="toc-text">ESP定律法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E6%AC%A1%E5%86%85%E5%AD%98%E9%95%9C%E5%83%8F%E6%B3%95"><span class="toc-text">2次内存镜像法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E6%AD%A5%E7%9B%B4%E8%BE%BE%E6%B3%95"><span class="toc-text">一步直达法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1ASPACK%E5%A3%B3"><span class="toc-text">手脱ASPACK壳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1Nspack%E5%A3%B3"><span class="toc-text">手脱Nspack壳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1FSG%E5%A3%B3"><span class="toc-text">手脱FSG壳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1-PECompact2-X%E5%A3%B3"><span class="toc-text">手脱 PECompact2.X壳</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1UPX%E5%A3%B3"><span class="toc-text">手脱UPX壳</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%AD%A5%E8%B7%9F%E8%B8%AA%E6%B3%95"><span class="toc-text">单步跟踪法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ESP%E5%AE%9A%E5%BE%8B%E6%B3%95"><span class="toc-text">ESP定律法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E6%AC%A1%E5%86%85%E5%AD%98%E9%95%9C%E5%83%8F%E6%B3%95"><span class="toc-text">2次内存镜像法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E6%AD%A5%E7%9B%B4%E8%BE%BE%E6%B3%95"><span class="toc-text">一步直达法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1ASPACK%E5%A3%B3"><span class="toc-text">手脱ASPACK壳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1Nspack%E5%A3%B3"><span class="toc-text">手脱Nspack壳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1FSG%E5%A3%B3"><span class="toc-text">手脱FSG壳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1-PECompact2-X%E5%A3%B3"><span class="toc-text">手脱 PECompact2.X壳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1-EZIP%E5%A3%B3"><span class="toc-text">手脱 EZIP壳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E8%84%B1-TELock0-98b1%E5%A3%B3"><span class="toc-text">手脱 TELock0.98b1壳</span></a></li></ol>
     </div>
   </section>
 
@@ -2977,7 +2990,7 @@ x64dbggithubhttps://github.com/x64dbg...</p>
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1651556436654.js"></script>
+<script src="/js/app.js?time=1655706974622.js"></script>
 
 
 
@@ -3169,7 +3182,7 @@ x64dbggithubhttps://github.com/x64dbg...</p>
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1651556436654')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1655706974622')</script>
 
 
 
@@ -3298,19 +3311,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1651556436654")
+        volantis.js("/js/plugins/sites.js?time=1655706974622")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1651556436654")
+        volantis.js("/js/plugins/friends.js?time=1655706974622")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1651556436654")
+        volantis.js("/js/plugins/contributors.js?time=1655706974622")
       }
     
   };
@@ -3435,7 +3448,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1651556436654");
+    return volantis.js("/js/search/hexo.js?time=1655706974622");
   }
 
   function loadSearchService() {
@@ -3726,7 +3739,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://farwary.github.io/","name":"Farwary"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/categories/破解/","name":"破解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://farwary.github.io/2022/05/01/pojie52/try/","name":"学习篇"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"学习篇","description":"","datePublished":"2022-05-01T14:56:38.504Z","dateModified":"2022-05-03T05:38:14.227Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://farwary.github.io/2022/05/01/pojie52/try/"},"author":{"@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/"},"publisher":{"@type":"Organization","name":"Farwary","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://farwary.github.io/2022/05/01/pojie52/try/","wordCount":0,"articleSection":"破解","keywords":"破解","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Farwary","url":"https://farwary.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://farwary.github.io/","name":"Farwary"}},{"@type":"ListItem","position":2,"item":{"@id":"https://farwary.github.io/categories/破解/","name":"破解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://farwary.github.io/2022/05/01/pojie52/try/","name":"学习篇"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"学习篇","description":"","datePublished":"2022-05-01T14:56:38.504Z","dateModified":"2022-05-04T04:19:42.581Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://farwary.github.io/2022/05/01/pojie52/try/"},"author":{"@type":"Person","name":"farwary","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://farwary.github.io/"},"publisher":{"@type":"Organization","name":"Farwary","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://farwary.github.io/2022/05/01/pojie52/try/","wordCount":0,"articleSection":"破解","keywords":"破解","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
